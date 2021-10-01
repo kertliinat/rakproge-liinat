@@ -1,0 +1,14 @@
+.Navbar{
+    background-color: grey;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+}
+.cart{
+    height: 50px;
+    margin: 50px;
+    align-content: right;
+}
