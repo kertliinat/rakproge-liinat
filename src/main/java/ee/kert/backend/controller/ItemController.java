@@ -25,4 +25,18 @@ import java.util.List;
         itemService.saveItem(item);
         return "returnib " + item.getName();
     }
+    @DeleteMapping("delete-item/{id}")
+    public List<Item> deleteItem(@PathVariable Long id){
+        itemService.deleteItem(id);
+        return itemService.getItems();
+    }
+
+    @PostMapping("edit-item")
+    public void editItem(@RequestBody Item item){
+        itemService.editItem(item);
+    }
+    @GetMapping("view-item/{id}")
+    public Item getOneItem(@PathVariable Long id) throws Exception {
+        return itemService.getOneItem(id);
+    }
 }
