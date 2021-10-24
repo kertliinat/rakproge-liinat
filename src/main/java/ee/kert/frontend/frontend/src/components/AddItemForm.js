@@ -17,6 +17,7 @@ function AddItemForm(props){
             category: categoryValue
         };
         props.onAddItem(item);
+        window.location.reload();
     }
     return(
         <form onSubmit={formSubmitHandler}>

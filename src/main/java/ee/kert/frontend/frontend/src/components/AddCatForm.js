@@ -14,6 +14,7 @@ function AddCatForm(props){
             price: priceValue,
         };
         props.onAddCat(category);
+        window.location.reload();
         console.log(category);
     }
     return(
