@@ -17,14 +17,17 @@ useEffect(()=>{
         setLoadedCategories(data);
     });
 },[])
-        return(
-            <div>    
-                <Link to="add-cat">
-                    <button>Lisa uus kategooria</button>
-                </Link>
-                <CategoryList categories={loadedCategories}/>
-            </div>
-        );
+    if(!isLoading){
+        return <div>Loading...</div>;
     }
+    return(
+        <div>
+            <Link to="add-cat">
+                <button>Lisa uus kategooria</button>
+            </Link>
+            <CategoryList categories={loadedCategories}/>
+        </div>
+    );
+}
 
 export default ViewCat;

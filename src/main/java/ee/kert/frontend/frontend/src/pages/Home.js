@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import ItemList from "../components/ItemList";
 
@@ -22,13 +21,7 @@ function Home(){
 
     return(
         <div>
-            <Link to="add-item">
-                <button>Lisa uus ese</button>
-            </Link>
-            <Link to="view-cat">
-                <button>Vaata kategooriaid</button>
-            </Link>
-            <ItemList items={loadedItems}/>
+            <ItemList isAddToCart={true} items={loadedItems}/>
         </div>
     )
 }

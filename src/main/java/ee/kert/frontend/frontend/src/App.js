@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import { Route } from 'react-router-dom';
@@ -7,6 +6,9 @@ import Cart from './pages/Cart';
 import AddItem from './pages/AddItem'
 import AddCat from './pages/AddCat';
 import ViewCat from './pages/ViewCat';
+import AdminHome from './pages/AdminHome';
+import SingleItem from "./pages/SingleItem";
+import EditItem from "./pages/EditItem";
 //muudatus
 function App() {
   return (
@@ -15,8 +17,6 @@ function App() {
     <Route path='/'>
       <Home />
     </Route>
-
-    
     <Route path='/cart'>
         <Cart />
     </Route>
@@ -28,6 +28,15 @@ function App() {
     </Route>
     <Route path='/view-cat'>
         <ViewCat />
+    </Route>
+    <Route path='/admin'>
+        <AdminHome />
+    </Route>
+    <Route path='/item/:itemId'>
+        <SingleItem />
+    </Route>
+    <Route path='/edit-item/:itemId'>
+        <EditItem                                                                                       />
     </Route>
     </div>
   );
