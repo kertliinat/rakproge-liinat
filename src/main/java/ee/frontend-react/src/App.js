@@ -1,38 +1,27 @@
-import { useState } from "react"
-import './App.css';
-import Fun from './components/Fun';
-import Greeting from './components/Greeting';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Posts from "./pages/Posts";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Header from "./components/Header";
+import { Layout } from 'antd';
 
 function App() {
-  const [magicNumber, setMagicNumber] = useState(0)
-  const [show, setShow] = useState(true)
-
-  return (
-    <div className="App">
-      { show && <h1>{ magicNumber }</h1> }
-      <Fun 
-        magicNumber={magicNumber} 
-        setMagicNumber={setMagicNumber}
-        show={show}
-        setShow={setShow}
-      />
-      <Fun 
-        magicNumber={magicNumber} 
-        setMagicNumber={setMagicNumber} 
-        amount={5}
-        show={show}
-        setShow={setShow}
-      />
-      <Fun 
-        magicNumber={magicNumber} 
-        setMagicNumber={setMagicNumber} 
-        amount={25}
-        show={show}
-        setShow={setShow}
-      />
-      <Greeting name="Kert" age="22"/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Layout>
+                    <Header>
+                        <Route path="/" component={Header}/>
+                    </Header>
+                    <Switch>
+                        <Route exact path="/posts" component={Posts}/>
+                        <Route exact path="/register" component={Register}/>
+                        <Route exact path="/login" component={Login}/>
+                    </Switch>
+                </Layout>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
